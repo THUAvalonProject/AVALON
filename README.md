@@ -2,7 +2,7 @@
 
 这是一个针对学校多平台课程查询的繁杂访问而开发的“学生平台”，平台开发以简约为主，尽可能地做到方便快捷且功能创新。主要采用拟态风格，只将常用的功能展示在主界面。
 
-![main_menu](.\present\main_menu.JPG)
+![main_menu](\present\main_menu.JPG)
 
 #### **HTML**
 
