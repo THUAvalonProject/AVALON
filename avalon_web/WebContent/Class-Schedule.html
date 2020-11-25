@@ -1,229 +1,277 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="utf-8" />
-		
-        <link rel="stylesheet" href="css/sample_01.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="shortcut icon" href="img/favicon.ico"/>        
-        <link rel="stylesheet" href="css/style_ClassSchedule.css">
-        <script type="text/javascript"></script>
-        
-		<title>學生課表</title>
-		
-		
-		
-	</head>
-	<body>
-		<body onselectstart="return true" >
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/sample_01.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style_ClassSchedule.css">
+    <script type="text/javascript"></script>
+
+    <title>學生課表</title>
+
+
+
+
+
+</head>
+
+<body>
+    <script>
+
+
+
+       
+        /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            
+            document.getElementsByClassName("dropdown-content").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        $('#aa').mousedown(function (e) {
+
+            if (e.which == 3) {  // 1 = 滑鼠左鍵 left; 2 = 滑鼠中鍵; 3 = 滑鼠右鍵
+                alert("按下的是滑鼠右鍵");
+            }
+        })
+    </script>
+
+    <body onselectstart="return true">
         <!-- jQ -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
         <!-- bootstrap js -->
-        <script src="js/bootstrap.js" ></script>
+        <script src="js/bootstrap.js"></script>
 
         <div class="header">
             <div class="header">
-                <img src="img/logo%20黑白.png" alt=""/>
-                
-                
-                
-                <img class="user_head" src="img/mine_select.png" alt=""/>
-                
-                <p class="user_name" onclick="">未登录</p>
-            </div>    
-        </div>  
-        
-            <div class="schedule">
-                
-                <div class="row">
-                    
-                    <div>
-                        <table class="table table-hover" class="table-responsive">
-                        
-                            <thead>
-                                <tr>
-                                    <th>節次\星期</th>
-                                    <th>星期一</th>
-                                    <th>星期二</th>
-                                    <th>星期三</th>
-                                    <th>星期四</th>
-                                    <th>星期五</th>
-                                    <th>星期六</th>
-                                    <th>星期日</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>0<br>07:10-08:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>1<br>08:10-09:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>2<br>09:10-10:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>3<br>10:20-11:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>4<br>11:20-12:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>4.5<br>12:10-13:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>5<br>13:10-14:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>6<br>14:10-15:00</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>7<br>15:20-16:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>8<br>16:20-17:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>9<br>17:20-18:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>10<br>18:20-19:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>11<br>19:20-20:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                            <tbody>
-                                <tr>
-                                    <th>12<br>20:20-21:10</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
+                <img src="img/logo%20黑白.png" alt="" />
 
-                        </table>
-                    </div>
+
+
+                <img class="user_head" src="img/mine_select.png" alt="" />
+
+                <p class="user_name" onclick="">未登录</p>
+            </div>
+        </div>
+
+        <div id="myDropdown" class="dropdown-content" >
+            <a href="">新增課程</a>
+            <a href="">新增行程</a>
+            <a href="">更改</a>
+            <a href="">刪除</a>
+            <a href="">查詢課程</a>
+        </div>
+
+        <div class="schedule" class="dropdown">
+
+            <div class="row">
+
+                <div>
+                    <table class="table table-hover" class="table-responsive" style="margin-top:10px;" >
+
+                        <thead>
+                            <tr>
+                                <th>節次\星期</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期日</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>0<br>07:10-08:00</th>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                                <td><button onclick="myFunction()" class="dropbtn"></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>1<br>08:10-09:00</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>2<br>09:10-10:00</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>3<br>10:20-11:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>4<br>11:20-12:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>4.5<br>12:10-13:00</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>5<br>13:10-14:00</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>6<br>14:10-15:00</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>7<br>15:20-16:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>8<br>16:20-17:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>9<br>17:20-18:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>10<br>18:20-19:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>11<br>19:20-20:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>12<br>20:20-21:10</th>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                                <td><button></button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
                 </div>
             </div>
-	</body>
+        </div>
+
+    </body>
+
 </html>

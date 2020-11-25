@@ -111,7 +111,7 @@
 				<!-- 每個圖標的小盒子 -->
 				<div class="box">
 					<!-- 放圖標的小盒子 -->
-					<div class="img" onclick="window.open('Class-Schedule.html')">
+					<div class="img" onclick="window.open('Class-Schedule.jsp')">
 						<img src="img/xuanzeqi.png" alt="" />
 					</div>
 
