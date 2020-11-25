@@ -1,19 +1,17 @@
-.header{
+.header {
     position: absolute;
     margin-top: 0;
 }
 
-
-
-body{
+body {
     background-color: rgb(160, 160, 160);
 }
 
-.row{
-    border-radius : 20px;
+.row {
+    border-radius: 20px;
 }
 
-.schedule{
+.schedule {
     margin-top: 300px;
     height: 800px;
     width: 90%;
@@ -21,21 +19,22 @@ body{
     -18px -18px 30px rgba(255,255,255,1);*/
 }
 
-.schedule .row{  
+.schedule .row {
     background-color: hsla(0, 29%, 97%, 0.918);
 }
 
-.schedule .row td:hover{
+.schedule .row td:hover {
     background-color: rgb(224, 224, 224);
 }
 
-th{
-    width:10%;
+th {
+    width: 10%;
 }
 
-td{
+td {
     padding: 0;
 }
+
 
 /*.container .box .img{
     width: 100px;
@@ -65,39 +64,42 @@ td{
     width: 100%;
     border: none;
     cursor: pointer;
-  }
-  
-  .dropbtn:hover, .dropbtn:focus {
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: #3e8e41;
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
     float: right;
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     top: 0;
     left: 0;
-    
     z-index: 1;
-    
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
