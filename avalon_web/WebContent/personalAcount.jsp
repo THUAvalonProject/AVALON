@@ -63,11 +63,21 @@
 		
 		
 		
-			<img class="user_head" src="img/用户.svg" alt="" onclick="clickAccount()" />
+			<img class="user_head" src="img/用户.svg" alt="" onclick="" />
 		
-			<p class="user_name" onclick="clickAccount()"><% out.print(name); %></p>
+			<p class="user_name" onclick=""><% out.print(name); %></p>
 		</div>
 		
+
+		<div class="list">
+			<ul>
+				<li>基本信息</li>
+				<li>賬號安全</li>
+				<li>其他選項</li>
+
+			</ul>
+
+		</div>
 		
 		<div>
 			<button onclick="logOut()">退出当前账号</button>

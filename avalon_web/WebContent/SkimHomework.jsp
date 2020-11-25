@@ -100,9 +100,9 @@
 
 
 
-				<img class="user_head" src="img/用户.svg" alt="" onclick="window.open('login.jsp')" />
+				<img class="user_head" src="img/用户.svg" alt="" onclick="clickAccount()" />
 
-				<p class="user_name" onclick="window.open('login.jsp')">
+				<p class="user_name" onclick="clickAccount()">
 					<% out.print(name); %>
 				</p>
 
