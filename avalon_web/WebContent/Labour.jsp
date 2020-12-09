@@ -11,7 +11,7 @@
 		
         <link rel="stylesheet" href="css/sample_01.css">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="shortcut icon" href="img/favicon.ico"/>      
+        <link rel="shortcut icon" href="img/logo-white.ico"/>      
         
         <link rel="stylesheet" href="css/Labour.css">
         
