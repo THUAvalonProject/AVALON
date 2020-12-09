@@ -1,3 +1,9 @@
+
+<!--
+<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+-->
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
@@ -16,28 +22,66 @@
 		
 		
 	</head>
-	<body>
-		
+	<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" οncοpy="return false">
+
 		<!-- 禁止选中 -->
 		<!-- <body oncontextmenu="return false"  onselectstart="return false"  ondragstart="return false" οncοpy="return false"> -->
-		<body onselectstart="return false" >
+
+		<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+		<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+		<script type="text/javascript" src="js/printLOGO.js"></script>
+		<!-- 登陆网站更改头像用户名等... -->
 		
-		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>	
-			
-		<script type="text/javascript" src="js/printLOGO.js"></script>	
-		
-		<script src="js/bootstrap.js" ></script>
-		
+		<%
+            String uuid = null;
+            String name = null;
+            Cookie cookie[] = request.getCookies();
+            //获取用户uuid
+            for(Cookie c:cookie){
+                if("_uuid".equals(c.getName())){
+                    uuid = c.getValue();
+                }
+            } 
+
+            Connection conn = null;
+            PreparedStatement ps = null;
+            
+            ResultSet rs_name = null;
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://127.0.0.1:3306/tmp?useSSL=false";
+            String username = "root";
+            String password = "root";
+            conn = DriverManager.getConnection(url, username, password);
+            request.setCharacterEncoding("utf-8");
+
+            String name_String = "SELECT name FROM user WHERE uuid ='"+ uuid + "'";
+
+            ps = conn.prepareStatement(name_String);
+            rs_name = ps.executeQuery();
+            //name = "test";
+            while(rs_name.next()){
+                name = "test";
+                name = rs_name.getString(1);
+                
+            }
+        %>
+
+		<script type="text/javascript" src="js/loginChange.js"></script>
+
+
 		<!-- 頭部 -->
 		<div class="header">
-			<img src="img/logo%20黑白.png" alt=""/>
-			
-			
-            <img class="user_head" src="img/mine_select.png" alt=""/>
-                
-            <p class="user_name" onclick="">未登录</p>
+			<img src="img/logo%20黑白.png" alt="" />
+
+
+
+			<img class="user_head" src="img/用户.svg" alt="" onclick="clickAccount()" />
+
+			<p class="user_name" onclick="clickAccount()"><% out.print(name); %></p>
 		</div>
-		
+
 		<br />
 		
 		
