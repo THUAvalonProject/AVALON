@@ -1,3 +1,7 @@
+<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 
@@ -66,6 +70,42 @@
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onbeforecopy="return false" oncopy=document.selection.empty() onselect=document.selection.empty()>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+    <%
+            String uuid = null;
+            String name = null;
+            Cookie cookie[] = request.getCookies();
+            //获取用户uuid
+            for(Cookie c:cookie){
+                if("_uuid".equals(c.getName())){
+                    uuid = c.getValue();
+                }
+            } 
+
+            Connection conn = null;
+            PreparedStatement ps = null;
+            
+            ResultSet rs_name = null;
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://127.0.0.1:3306/tmp?useSSL=false";
+            String username = "root";
+            String password = "root";
+            conn = DriverManager.getConnection(url, username, password);
+            request.setCharacterEncoding("utf-8");
+
+            String name_String = "SELECT name FROM user WHERE uuid ='"+ uuid + "'";
+
+            ps = conn.prepareStatement(name_String);
+            rs_name = ps.executeQuery();
+            //name = "test";
+            while(rs_name.next()){
+                name = "test";
+                name = rs_name.getString(1);
+                
+            }
+    %>
+
+
 	<script>
 	    //滑鼠右鍵預設選單事件
 	    
@@ -117,15 +157,13 @@
         <script src="js/bootstrap.js"></script>
 
         <div class="header">
-            <div class="header">
-                <img src="img/logo%20黑白.png" alt="" />
-
-
-
-                <img class="user_head" src="img/mine_select.png" alt="" />
-
-                <p class="user_name" onclick="">未登录</p>
-            </div>
+        	<img src="img/logo%20黑白.png" alt="" />
+        
+        
+        
+        	<img class="user_head" src="img/用户.svg" alt="" onclick="clickAccount()" />
+        
+        	<p class="user_name" onclick="clickAccount()"><% out.print(name); %></p>
         </div>
 
         <div id="myMenu">
