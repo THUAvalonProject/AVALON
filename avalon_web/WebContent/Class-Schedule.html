@@ -22,11 +22,11 @@
             /* border: 1px solid #EED5D2; */
             z-index: 999
         }
-
+        
         #myMenu ul {
             list-style: none;
         }
-
+        
         #myMenu ul li {
             width: 100px;
             height: 20px;
@@ -35,7 +35,7 @@
             text-align: center;
             /* margin-left: -25px */
         }
-
+        
         #myDiv {
             border: 1px solid red;
             width: 100px;
@@ -45,36 +45,7 @@
         }
     </style>
 
-    <script>
-        //滑鼠右鍵預設選單事件
-        document.oncontextmenu = function (ev) {
-            var oevent = ev || event;
-            var myMenu = document.getElementById('myMenu');
-            //彈出自定義選單
-            myMenu.style.display = 'block';
-            //設定自定義選單的座標，達到滑鼠右鍵的地方彈出自定義選單
-            myMenu.style.left = oevent.clientX + 'px';
-            myMenu.style.top = oevent.clientY + 'px';
-
-            //禁用右鍵預設選單
-            return false;
-        }
-        //點選頁面任意區域，隱藏自定義選單
-        document.onclick = function () {
-            var myMenu = document.getElementById('myMenu');
-            myMenu.style.display = 'none';
-        }
-        //顯示div
-        function xianshi() {
-            //var myDiv = document.getElementById('myDiv');
-            myDiv.style.display = "block";
-        }
-        //隱藏div
-        function yc() {
-            //var myDiv = document.getElementById('myDiv');
-            myDiv.style.display = "none";
-        }
-    </script>
+    
 
 
 
@@ -82,10 +53,54 @@
 
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onbeforecopy="return false" oncopy=document.selection.empty() onselect=document.selection.empty()>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-    <body onselectstart="return true">
+	<script>
+	    //滑鼠右鍵預設選單事件
+	    
+	        //點選頁面任意區域，隱藏自定義選單
+		$("#element").ready(function() {
+			$("button").mousedown(function(ev){
+				console.log(ev.button);
+				if(ev.button == 2){
+					var oevent = ev || event;
+					var myMenu = document.getElementById('myMenu');
+					//彈出自定義選單
+					myMenu.style.display = 'block';
+					//設定自定義選單的座標，達到滑鼠右鍵的地方彈出自定義選單
+					myMenu.style.left = oevent.pageX + 'px';
+					myMenu.style.top = oevent.pageY + 'px';
+						
+					//禁用右鍵預設選單
+					return false;
+				}
+			});
+			
+			
+		});
+		
+			
+			
+	    document.onclick = function() {
+	            var myMenu = document.getElementById('myMenu');
+	            myMenu.style.display = 'none';
+	        }
+	        //顯示div
+	    function xianshi() {
+	        //var myDiv = document.getElementById('myDiv');
+	        myDiv.style.display = "block";
+	    }
+		
+	    //隱藏div
+	    function yc() {
+	        //var myDiv = document.getElementById('myDiv');
+	        myDiv.style.display = "none";
+	    }
+	</script>	
+	
+	
+    <body>
         <!-- jQ -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
         <!-- bootstrap js -->
@@ -111,7 +126,7 @@
                 <li>新增行程</li>
                 <li>更改</li>
                 <li>刪除</li>
-                <li>查詢課程</li>               
+                <li>查詢課程</li>
             </ul>
         </div>
 
@@ -138,7 +153,7 @@
                         <tbody>
                             <tr>
                                 <th>0<br>07:10-08:00</th>
-                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn" onclick="xianshi();"></button></td>
                                 <td><button id="item" class="dropbtn"></button></td>
                                 <td><button id="item" class="dropbtn"></button></td>
                                 <td><button id="item" class="dropbtn"></button></td>
@@ -308,7 +323,7 @@
                     </table>
                 </div>
 
-                
+
                 <!-- <div id="myDiv">我是內容</div> -->
 
             </div>
