@@ -12,6 +12,70 @@
 
     <title>學生課表</title>
 
+    <style>
+        #myMenu {
+            width: 100px;
+            height: 80px;
+            background: white;
+            display: none;
+            position: absolute;
+            /* border: 1px solid #EED5D2; */
+            z-index: 999
+        }
+
+        #myMenu ul {
+            list-style: none;
+        }
+
+        #myMenu ul li {
+            width: 100px;
+            height: 20px;
+            background: #bdbfce;
+            /* margin-bottom: 5px; */
+            text-align: center;
+            /* margin-left: -25px */
+        }
+
+        #myDiv {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 200px auto;
+        }
+    </style>
+
+    <script>
+        //滑鼠右鍵預設選單事件
+        document.oncontextmenu = function (ev) {
+            var oevent = ev || event;
+            var myMenu = document.getElementById('myMenu');
+            //彈出自定義選單
+            myMenu.style.display = 'block';
+            //設定自定義選單的座標，達到滑鼠右鍵的地方彈出自定義選單
+            myMenu.style.left = oevent.clientX + 'px';
+            myMenu.style.top = oevent.clientY + 'px';
+
+            //禁用右鍵預設選單
+            return false;
+        }
+        //點選頁面任意區域，隱藏自定義選單
+        document.onclick = function () {
+            var myMenu = document.getElementById('myMenu');
+            myMenu.style.display = 'none';
+        }
+        //顯示div
+        function xianshi() {
+            //var myDiv = document.getElementById('myDiv');
+            myDiv.style.display = "block";
+        }
+        //隱藏div
+        function yc() {
+            //var myDiv = document.getElementById('myDiv');
+            myDiv.style.display = "none";
+        }
+    </script>
+
 
 
 
@@ -39,83 +103,26 @@
             </div>
         </div>
 
-        <div id="myDropdown" class="dropdown-content">
-            <a href="">新增課程</a>
-            <a href="">新增行程</a>
-            <a href="">更改</a>
-            <a href="">刪除</a>
-            <a href="">查詢課程</a>
+        <div id="myMenu">
+            <ul>
+                <!-- <li onclick="xianshi();">顯示</li>
+                <li onclick="yc();">隱藏</li> -->
+                <li>新增課程</li>
+                <li>新增行程</li>
+                <li>更改</li>
+                <li>刪除</li>
+                <li>查詢課程</li>               
+            </ul>
         </div>
 
-        <div class="schedule" class="dropdown">
+        <div class="schedule">
 
             <div class="row">
 
                 <div>
                     <table class="table table-hover" class="table-responsive" style="margin-top:10px;">
-                        <!-- <script>
-                            document.oncontextmenu = function() {
-                                return false;
-                            }
 
-                            $('.dropbtn').on('mousedown', function(e) {
-                                console.log("click");
-                                var key = e.which; //获取鼠标键位
-                                if (key == 3) { //1：代表左键；2：代表中键；3：代表右键
-                                    //获取右键点击坐标
-                                    var x = e.clientX;
-                                    var y = e.clientY;
-                                    $('.myDropdown').show().css({
-                                        left: x,
-                                        top: y
-                                    });
-                                }
-                            });
-                            //点击任意部位隐藏
-                            $(document).on('click', function() {
-                                $('.menu').hide();
-                            });
-                            $("#item").click(function() {
-                                console.log("click");
-                                $(".dropdown-content").show();
-                            });
-                        </script> -->
-                        <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-                        <script src="src/jquery.contextify.js"></script>
-                        <script>
-                            var options = {
-                                items: [{
-                                    header: '右键功能菜单'
-                                }, {
-                                    divider: true
-                                }, {
-                                    text: '第一个链接',
-                                    href: '#'
-                                }, {
-                                    text: '第二个链接',
-                                    onclick: function() {
-                                        alert("你点击了第二个链接")
-                                    }
-                                }, {
-                                    text: '第三个链接',
-                                    onclick: function() {
-                                        alert("你点击了第3个链接")
-                                    }
-                                }, {
-                                    text: '第四个链接',
-                                    onclick: function() {
-                                        alert("你点击了第4个链接")
-                                    }
-                                }, {
-                                    divider: true
-                                }, {
-                                    text: '更多...',
-                                    href: '#'
-                                }]
-                            }
-                            $('.dropbtn').contextify(options);
-                        </script>
-                        <div class="dropbtn"> click here!!!!</div>
+
                         <thead>
                             <tr>
                                 <th>節次\星期</th>
@@ -143,162 +150,167 @@
                         <tbody>
                             <tr>
                                 <th>1<br>08:10-09:00</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>2<br>09:10-10:00</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>3<br>10:20-11:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>4<br>11:20-12:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>4.5<br>12:10-13:00</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>5<br>13:10-14:00</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>6<br>14:10-15:00</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>7<br>15:20-16:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>8<br>16:20-17:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>9<br>17:20-18:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>10<br>18:20-19:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>11<br>19:20-20:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <th>12<br>20:20-21:10</th>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
-                                <td><button></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
+                                <td><button id="item" class="dropbtn"></button></td>
                             </tr>
                         </tbody>
 
+
                     </table>
                 </div>
+
+                
+                <!-- <div id="myDiv">我是內容</div> -->
+
             </div>
         </div>
 
