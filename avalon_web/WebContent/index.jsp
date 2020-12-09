@@ -133,7 +133,7 @@
 				<!-- 每個圖標的小盒子 -->
 				<div class="box">
 					<!-- 放圖標的小盒子 -->
-					<div class="img">
+					<div class="img" onclick="window.open('Labour.html')">
 						<img src="img/扫把.png" alt="" />
 					</div>
 
