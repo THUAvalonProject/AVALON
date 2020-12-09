@@ -7,11 +7,11 @@ body {
     background-color: rgb(160, 160, 160);
 }
 
-.row {
+.row { 
     border-radius: 20px;
 }
 
-.schedule {
+.schedule { /* 中間表格 */
     margin-top: 300px;
     height: 800px;
     width: 90%;
@@ -23,7 +23,7 @@ body {
     background-color: hsla(0, 29%, 97%, 0.918);
 }
 
-.schedule .row td:hover {
+.schedule .row td:hover {  /* 鼠標經過顯示 */
     background-color: rgb(224, 224, 224);
 }
 
@@ -35,6 +35,22 @@ td {
     padding: 0;
 }
 
+.dropbtn {
+    /* ackground-color: blue; */
+    /* opacity: 0; */
+    color: white;
+    padding: 30px;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #403d47;
+}
 
 /*.container .box .img{
     width: 100px;
@@ -54,52 +70,3 @@ td {
    
 }*/
 
-.dropbtn {
-    background-color: blue;
-    /* opacity: 0; */
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    height: 100%;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #3e8e41;
-}
-
-.dropdown {
-    float: right;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}
