@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/sample_01.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="shortcut icon" href="img/logo-white.ico" />
+    <link rel="stylesheet" href="css/style_news.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <script type="text/javascript"></script>
+
+    <title>校園新聞</title>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body oncontextmenu="return false" onselectstart="return false"  ondragstart="return false" onbeforecopy="return false"
+    oncopy=document.selection.empty() onselect=document.selection.empty()>
+
+
+    <!-- <%
+            String uuid = null;
+            String name = null;
+            Cookie cookie[] = request.getCookies();
+            //获取用户uuid
+            for(Cookie c:cookie){
+                if("_uuid".equals(c.getName())){
+                    uuid = c.getValue();
+                }
+            } 
+
+            Connection conn = null;
+            PreparedStatement ps = null;
+            
+            ResultSet rs_name = null;
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://127.0.0.1:3306/tmp?useSSL=false";
+            String username = "root";
+            String password = "root";
+            conn = DriverManager.getConnection(url, username, password);
+            request.setCharacterEncoding("utf-8");
+
+            String name_String = "SELECT name FROM user WHERE uuid ='"+ uuid + "'";
+
+            ps = conn.prepareStatement(name_String);
+            rs_name = ps.executeQuery();
+            //name = "test";
+            while(rs_name.next()){
+                name = "test";
+                name = rs_name.getString(1);
+                
+            }
+    %> -->
+
+
+    <script>
+
+    </script>
+
+
+    <body>
+        <!-- jQ -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.js"></script>
+
+        <div class="header">
+            <img src="img/logo%20黑白.png" alt="" />
+
+
+
+            <img class="user_head" src="img/用户.svg" alt="" onclick="clickAccount()" />
+
+            <p class="user_name" onclick="clickAccount()">
+                <% out.print(name); %>
+            </p>
+        </div>
+        <div>
+            <ul class="container">
+                <li><img src="img/hot.jfif" alt="" width="80%"></li>
+                <li><img src="img/angry.jfif" alt="" width="80%"></li>
+                <li><img src="img/relax.jfif" alt="" width="80%"></li>
+            </ul>
+        </div>
+
+        <div style="margin-top:10px" >
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/slick.js"></script>
+
+        <script>
+            $('.container').slick({
+                dots: true
+            });
+        </script>
+
+    </body>
+
+</html>
