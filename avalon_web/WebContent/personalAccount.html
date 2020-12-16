@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>個人賬號--avalon</title>
+
+		<link rel="stylesheet" href="css/style_personalAcount.css">
+		<link rel="shortcut icon" href="img/logo-white.ico" />
+	</head>
+
+	<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" οncοpy="return false">
+		<script src="js/jquery-3.5.1.js"></script>
+
+		<script src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/printLOGO.js"></script>
+		<!-- 登陆网站更改头像用户名等... -->
+
+		<script type="text/javascript" src="js/loginChange.js"></script>
+		
+		<script>
+			
+			$("#element").ready(function() {  //等待載入完成
+			
+			//开始只显示info box
+				$(".box").each(function(){
+					//console.log($(this).attr('id'));
+					if($(this).attr('id') == "info"){
+						$(this).show();
+					}else{
+						$(this).hide();
+					}
+				})
+			
+				$(".click").click(function(){
+					console.log($(this).attr('id'));
+					var id = $(this).attr('id');
+					$(".box").each(function(){
+						//console.log($(this).attr('id'));
+						if($(this).attr('id') == id){
+							$(this).show(500);
+						}else{
+							$(this).hide(500);
+						}
+					})
+					
+					//console.log($(".body").find("#info").attr("class"));
+					
+				});
+			});
+					
+					
+			
+		</script>
+		<!-- 頭部 -->
+		<div class="header">
+			<img src="img/logo%20黑白.png" alt="" onclick="window.open(index.jsp)" />
+
+
+
+			<img class="user_head" src="img/用户.svg" alt="" onclick="" />
+
+			<p class="user_name" onclick="">
+				<% out.print(name); %>
+			</p>
+		</div>
+
+
+		<div class="nav-list">
+			<ul>
+				<li><a href="#" class="click" id="info">基本信息</a></li>
+				<li><a href="#" class="click" id="safe">賬號安全</a></li>
+				<li><a href="#" class="click" id="other">其他選項</a></li>
+
+			</ul>
+
+		</div>
+		
+		
+		<div class="body">
+			
+			<div class="box" style="z-index: 10;" id="info"> 
+				
+				<div class="img">
+					
+					<img src="img/abaaba.jpg" style="z-index: 11;"/>
+					<!-- 更換圖片 從數據庫讀取！！ -->
+					<div style="z-index: 12;" class="cover"> 點擊更換頭像 </div>
+					
+				</div>
+				
+				<p> 暱稱 ： </p>
+				<p> 姓名 ： </p>
+				<p> 年級 ： </p>
+				<p> 學生號碼 ： </p>
+				<p> 系級 ： </p>
+				
+				
+			</div>
+			
+			<div class="box" style="z-index: 20;" id="safe">
+				<h3> 賬號綁定 </h3>
+				<p></p>
+				<p></p>
+				<h4> Ilearn </h4>
+				<p> 賬號 ： </p>
+				<p> 密碼 ： </p>
+				<p></p>
+				<p></p>
+				<h4> 新版教學平台 </h4>
+				<p> 賬號 ： </p>
+				<p> 密碼 ： </p>
+			
+			
+			</div>
+			
+			<div class="box" style="z-index: 30;" id="other"> 03 </div>
+			
+			<img src="img/spec.png" id="spec" />
+		</div>
+		<!-- <div>
+        <button onclick="logOut()">退出当前账号</button>
+
+    </div> -->
+	</body>
+
+</html>

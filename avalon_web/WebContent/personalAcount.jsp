@@ -17,7 +17,7 @@
 		<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 		
 		<script type="text/javascript" src="js/printLOGO.js"></script>
-		<!-- 登陆网站更改头像用户名等... --!>
+		<!-- 登陆网站更改头像用户名等... -->
 		
 		<%
 		    String uuid = null;
