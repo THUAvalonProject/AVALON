@@ -33,7 +33,7 @@
 				})
 			
 				$(".click").click(function(){
-					console.log($(this).attr('id'));
+					//console.log($(this).attr('id'));
 					var id = $(this).attr('id');
 					$(".box").each(function(){
 						//console.log($(this).attr('id'));
@@ -45,6 +45,56 @@
 					})
 					
 					//console.log($(".body").find("#info").attr("class"));
+					
+				});
+				
+				$("img").click(function(){
+					//console.log($(this).attr('id'));
+					var id = $(this).attr('id');
+					if(id == "ilearn_pwd_action"){
+						
+						if($(this).attr('class') == "invisible" ){
+							$(this).attr('src', "img/visible.svg");
+							
+							$(this).addClass("visible"); 
+							$(this).removeClass("invisible");
+							
+							
+							$("#ilearn_pwd").attr("type" , "text");
+							//console.log("invisible");
+						}else{
+							$(this).attr('src', "img/invisible.svg");
+							
+							$(this).removeClass("visible");
+							$(this).addClass("invisible"); 
+							
+							$("#ilearn_pwd").attr("type" , "password");
+							//console.log("visible");
+						}
+					}
+					
+					if(id == "new_pwd_action"){
+						
+						if($(this).attr('class') == "invisible" ){
+							$(this).attr('src', "img/visible.svg");
+							
+							$(this).addClass("visible"); 
+							$(this).removeClass("invisible");
+							
+							
+							$("#new_pwd").attr("type" , "text");
+							//console.log("invisible");
+						}else{
+							$(this).attr('src', "img/invisible.svg");
+							
+							$(this).removeClass("visible");
+							$(this).addClass("invisible"); 
+							
+							$("#new_pwd").attr("type" , "password");
+							//console.log("visible");
+						}
+						
+					}
 					
 				});
 			});
@@ -68,9 +118,9 @@
 
 		<div class="nav-list">
 			<ul>
-				<li><a href="#" class="click" id="info">基本信息</a></li>
-				<li><a href="#" class="click" id="safe">賬號安全</a></li>
-				<li><a href="#" class="click" id="other">其他選項</a></li>
+				<li  class="click" id="info"><a>基本信息</a></li>
+				<li  class="click" id="safe"><a>賬號安全</a></li>
+				<li  class="click" id="other"><a>其他選項</a></li>
 
 			</ul>
 
@@ -89,39 +139,65 @@
 					
 				</div>
 				
-				<p> 暱稱 ： </p>
-				<p> 姓名 ： </p>
-				<p> 年級 ： </p>
-				<p> 學生號碼 ： </p>
-				<p> 系級 ： </p>
+				<p> 暱稱 ： <input type="text" disabled="" value="<% out.print(name); %>" ></input></p>
+				<p> 姓名 ： <input type="text" disabled="" value="<% out.print(real_name); %>" ></input></p>
+				<p> 年級 ： <input type="text" disabled="" value="<% out.print(grade); %>" ></input></p>
+				<p> 學生號碼 ： <input type="text" disabled="" value="<% out.print(number); %>" ></input></p>
+				<p> 系級 ： <input type="text" disabled="" value="<% out.print(department); %>" ></input></p>
 				
+				<button>編輯</button>
+				<button>提交</button>
 				
 			</div>
 			
 			<div class="box" style="z-index: 20;" id="safe">
 				<h3> 賬號綁定 </h3>
+				
+				
 				<p></p>
 				<p></p>
+				
+				
 				<h4> Ilearn </h4>
-				<p> 賬號 ： </p>
-				<p> 密碼 ： </p>
+				<p> 賬號 ： <input type="text" disabled="" value="<% out.print(ilearn_acc); %>s"></input></p>
+				<p> 密碼 ： 
+					<input id="ilearn_pwd" type="password" disabled="" value="<% out.print(ilearn_pwd); %>" maxlength="24"/>
+					<img class="invisible" id="ilearn_pwd_action" src="img/invisible.svg">
+				</p>
+				
+				
 				<p></p>
 				<p></p>
+				
+				
 				<h4> 新版教學平台 </h4>
-				<p> 賬號 ： </p>
-				<p> 密碼 ： </p>
-			
+				<p> 賬號 ： <input type="text" disabled="" value="<% out.print(new_acc); %>" ></input></p>
+				<p> 密碼 ： 
+					<input id="new_pwd" type="password" disabled="" value="<% out.print(new_pwd); %>" maxlength="24"/>
+					<img class="invisible" id="new_pwd_action" src="img/invisible.svg">
+
+				</p>
+				
+				
+				<button>編輯</button>
+				<button>提交</button>
 			
 			</div>
 			
-			<div class="box" style="z-index: 30;" id="other"> 03 </div>
+			<div class="box" style="z-index: 30;" id="other">
+				
+				<button onclick="logOut()">退出当前账号</button>
+
+				
+				<div class="innerbox">
+					<p>慎重選擇</p>
+					<button>註銷賬戶</button>
+				</div>
+			</div>
 			
 			<img src="img/spec.png" id="spec" />
 		</div>
-		<!-- <div>
-        <button onclick="logOut()">退出当前账号</button>
 
-    </div> -->
 	</body>
 
 </html>

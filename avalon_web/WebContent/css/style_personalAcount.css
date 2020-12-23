@@ -17,6 +17,27 @@ a {
 	text-decoration: none;
 }
 
+button {
+	 
+	height: 50px;
+	width: auto;
+	color: #222222;
+	margin: 40px 0px 10px 20px ;
+	border-radius: 25px;
+	padding: 0px 30px 0px 30px ;
+	background-color: white;
+	border-style: none;
+	outline: none;
+
+}
+button:hover {
+	background-color: #d1d1d1;
+	color: #686868;
+}
+button:active{
+	color: #f9f9f9;
+	background-color: #3e3e3e;
+}
 .header {
 	height: 110px;
 	width: 100%;
@@ -118,6 +139,10 @@ a {
 	border-radius: 0px;
 	border: none;
 }
+.body #spec:hover{
+	opacity: 0;
+}
+
 
 .body .box {
 
@@ -128,6 +153,7 @@ a {
 
 	text-align: left;
 }
+
 .body .box .img {
 	overflow: hidden;
 	height: 165px;
@@ -136,6 +162,7 @@ a {
 	
 	margin-bottom: 20px;
 } 
+
 .body .box img {
 	
 	height: 150px;
@@ -143,8 +170,6 @@ a {
 	border-radius: 80px;
 	margin: 5px;
 	border: 5px solid #383838;
-
-	
 
 }
 
@@ -171,9 +196,46 @@ a {
 }
 
 .body .box p {
-	width: 100px;
+	
+	margin-top: 5px;
+	width: auto;
 	height: 30px;
 	line-height: 30px;
 	margin-left: 20px;
 
+}
+
+input {
+	height: 30px;
+	background: none;
+	border-style: none;
+	padding-left: 8px;
+	outline: none;
+}
+
+#ilearn_pwd_action,#new_pwd_action{
+	/* float: right; */
+	margin-left: 0px;
+	margin-top: 0px;
+	position: fixed;
+	height: 30px;
+	width: 30px;
+	border-style: none;
+
+}
+
+.body .box .innerbox {
+	height: 200px;
+	width: calc(100%/2);
+	margin-top: 20px;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #fefdfd;
+}
+
+.body .box .innerbox p {
+	margin-left: 0px;
+	margin-top: 0px;
+	color: red;
+	font-size: 1.3rem;
 }
