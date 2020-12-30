@@ -66,12 +66,60 @@
     %> -->
 
 
-    <script>
 
-    </script>
 
 
     <body>
+
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/slick.js"></script>
+
+        <script>
+            $("#element").ready(function () {
+                $(".main").hide();
+                $(".new").hide();
+                $(".stu").hide();
+                $(".event").hide();
+                $(".sys").hide();
+                $(".clickmain").click(function () {                    
+                    $(".new").hide();
+                    $(".stu").hide();
+                    $(".event").hide();
+                    $(".sys").hide();
+                    $(".main").fadeToggle();
+                });
+                $(".clicknew").click(function () {
+                    $(".main").hide();
+                    $(".stu").hide();
+                    $(".event").hide();
+                    $(".sys").hide();
+                    $(".new").fadeToggle();
+                });
+                $(".clickstu").click(function () {
+                    $(".main").hide();
+                    $(".new").hide();
+                    $(".event").hide();
+                    $(".sys").hide();
+                    $(".stu").fadeToggle();
+                });
+                $(".clickevent").click(function () {
+                    $(".main").hide();
+                    $(".new").hide();
+                    $(".stu").hide();
+                    $(".sys").hide();
+                    $(".event").fadeToggle();
+                });
+                $(".clicksys").click(function () {
+                    $(".main").hide();
+                    $(".new").hide();
+                    $(".stu").hide();
+                    $(".event").hide();
+                    $(".sys").fadeToggle();
+                });
+            });
+
+        </script>
+
         <!-- jQ -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> -->
         <!-- bootstrap js -->
@@ -88,26 +136,204 @@
                 <% out.print(name); %>
             </p>
         </div>
+        
         <div>
             <ul class="container">
+                <li><img src="https://www.thu.edu.tw/upload/ad_pic/banner-2020TCSA-1.jpg" alt="" width="100%"
+                        height="600px"></li>
+                <li><img src="https://www.thu.edu.tw/upload/ad_pic/banner-se-20201104-1.jpg" alt="" width="100%"
+                        height="600px"></li>
                 <li><img src="img/hot.jfif" alt="" width="80%"></li>
                 <li><img src="img/angry.jfif" alt="" width="80%"></li>
                 <li><img src="img/relax.jfif" alt="" width="80%"></li>
             </ul>
+            <div style="margin-top:20px" align="center">
+                <button type="button" class="clickmain">重要新聞</button>
+                <button type="button" class="clicknew">最新消息</button>
+                <button type="button" class="clickstu">學生相關</button>
+                <button type="button" class="clickevent">活動資訊</button>
+                <button type="button" class="clicksys">系統公告</button>
+            </div>
+            <div class="row">
+                <div class="main">
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                </div>
+
+                <div class="stu">
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                </div>
+
+                <div class="sys">
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>yyyy-mm-dd</h3>
+                        <a href="">主題</a>
+                        <p>內容</p>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
-        <div style="margin-top:10px" >
 
-        </div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="js/slick.js"></script>
+
 
         <script>
             $('.container').slick({
                 dots: true
             });
         </script>
+
 
     </body>
 
