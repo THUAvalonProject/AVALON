@@ -9,3 +9,22 @@ body {
 img{
   margin: 0 auto;
 }
+
+button{
+  height: 50px;
+  width:200px;
+  margin-left: 0px;
+  background-color: #ccc9c9;
+  border-radius: 5px;
+  border-color:#e6e5e5;
+}
+
+.col-md-9{
+  margin: 0 auto;
+  left:79px;
+}
+
+a{
+  color:green;
+  font-size:25px
+}
