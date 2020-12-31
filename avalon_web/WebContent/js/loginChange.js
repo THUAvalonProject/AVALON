@@ -3,7 +3,7 @@ console.log('cookie = ' + $.cookie('_uuid'));
 
 function clickAccount() {
     if ($.cookie('_uuid') != undefined) {
-        window.open('personalAcount.jsp');
+        window.open('personalAccount.jsp');
 
     } else {
         window.open('login.jsp');
@@ -39,7 +39,8 @@ function delCookie(name) {
         document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
 }
 
-function logOut(){
-	delCookie('_uuid');
-	location.replace(document.referrer);
+function logOut() {
+    delCookie('_uuid');
+    location.replace(document.referrer);
+    window.open('login.jsp');
 }
