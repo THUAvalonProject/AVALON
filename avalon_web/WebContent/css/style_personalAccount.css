@@ -17,6 +17,22 @@ a {
     text-decoration: none;
 }
 
+select {
+    /* 清除默认边框 */
+    border: 0;
+    /* 清除默认的箭头样式 */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* 右侧添加小箭头的背景图 */
+    width: 130px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 19px;
+    padding-left: 50px;
+    background-color: #efeeee;
+}
+
 button {
     height: 50px;
     width: auto;
@@ -192,11 +208,11 @@ input {
     outline: none;
 }
 
+#pwd_action,
 #ilearn_pwd_action,
 #new_pwd_action {
     margin-left: 0px;
     margin-top: 0px;
-    position: fixed;
     height: 30px;
     width: 30px;
     border-style: none;

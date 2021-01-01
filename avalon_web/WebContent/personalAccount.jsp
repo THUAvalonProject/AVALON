@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<title>個人賬號--avalon</title>
 
-		<link rel="stylesheet" href="css/style_personalAcount.css">
+		<link rel="stylesheet" href="css/style_personalAccount.css">
 		<link rel="shortcut icon" href="img/logo-white.ico" />
 	</head>
 
@@ -217,7 +217,9 @@
 					
 					<img src="img/abaaba.jpg" style="z-index: 11;"/>
 					<!-- 更換圖片 從數據庫讀取！！ -->
-					<div style="z-index: 12;" class="cover"> 點擊更換頭像 </div>
+					<div style="z-index: 13;" class="cover"> 暫不支持更換頭像 </div>
+
+					<%-- <input id="img_input" type="file" style="z-index: 13;" /> --%>
 					
 				</div>
 				
@@ -298,7 +300,7 @@
 				<p></p>
 				
 				
-				<form action="" method="POST" name="user_account" class="user_account">
+				<form action="upload_user_account.jsp" method="POST" name="user_account" class="user_account">
 					<h4> Avalon </h4>
 					<p> 賬號 ： <input name="name" type="text" disabled="" value="<% out.print(name); %>"/></p>
 					<p> 密碼 ： 
@@ -358,8 +360,94 @@
 				
 				<div class="innerbox">
 					<p>慎重選擇</p>
-					<button class="delete_acc">註銷賬戶</button>
-					<button class="delete_acc">重置賬戶信息</button>
+					<button id="Btn"  action="delete.jsp" class="delete_acc">註銷賬戶</button>
+					<%-- <button class="delete_acc" onclick="return ">重置賬戶信息</button> --%>
+
+					<!-- 弹窗 -->
+					<div id="Modal" class="modal">
+
+					  <!-- 弹窗内容 -->
+					  <div class="modal-content">
+					    <form action="delete.jsp">
+							<span class="close">&times;</span>
+					    	<p>註銷的賬戶將無法找回，確認嗎？</p>
+							<button type="submit">確認</button>
+							<button onclick="modal.style.display = 'none';">取消</button>
+						
+						</form>
+					  </div>
+ 
+					</div>
+
+					<style>
+						/* 弹窗 (background) */
+						.modal {
+						    display: none; /* 默认隐藏 */
+						    position: fixed; /* 固定定位 */
+						    z-index: 1; /* 设置在顶层 */
+						    left: 0;
+						    top: 0;
+						    width: 100%; 
+						    height: 100%;
+						    overflow: auto; 
+						    background-color: rgb(0,0,0); 
+						    background-color: rgba(0,0,0,0.4); 
+						}
+
+						/* 弹窗内容 */
+						.modal-content {
+							border-radius: 20px;
+						    background-color: #fefefe;
+						    margin: 15% auto; 
+						    padding: 20px;
+						    border: 1px solid #888;
+						    width: 300px; 
+						}
+
+						/* 关闭按钮 */
+						.close {
+						    color: #aaa;
+						    float: right;
+						    font-size: 28px;
+						    font-weight: bold;
+						}
+
+						.close:hover,
+						.close:focus {
+						    color: black;
+						    text-decoration: none;
+						    cursor: pointer;
+						}
+					
+					</style>
+
+					<script>
+						// 获取弹窗
+						var modal = document.getElementById('Modal');
+
+						// 打开弹窗的按钮对象
+						var btn = document.getElementById("Btn");
+
+						// 获取 <span> 元素，用于关闭弹窗
+						var span = document.querySelector('.close');
+
+						// 点击按钮打开弹窗
+						btn.onclick = function() {
+						    modal.style.display = "block";
+						}
+
+						// 点击 <span> (x), 关闭弹窗
+						span.onclick = function() {
+						    modal.style.display = "none";
+						}
+
+						// 在用户点击其他地方时，关闭弹窗
+						window.onclick = function(event) {
+						    if (event.target == modal) {
+						        modal.style.display = "none";
+						    }
+						}
+					</script>
 				</div>
 			</div>
 			
