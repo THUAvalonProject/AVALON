@@ -156,7 +156,7 @@
 				<div class="box">
 					<!-- 放圖標的小盒子 -->
 					<div class="img">
-						<img src="img/ico_bb_sx_bq.png" alt="" />
+						<img src="img/ico_bb_sx_bq.png" alt="" onclick="window.open('News.jsp')"/>
 					</div>
 
 					<!-- 圖標名字 -->
