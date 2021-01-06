@@ -73,7 +73,7 @@
 
 		<!-- 頭部 -->
 		<div class="header">
-			<img src="img/logo%20黑白.png" alt="" />
+			<img src="img/logo%20黑白.png" alt="" onclick="window.location.href='index.jsp'" />
 
 
 
