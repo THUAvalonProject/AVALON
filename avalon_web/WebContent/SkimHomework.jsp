@@ -30,6 +30,47 @@
 		<!-- bootstrap js -->
 		<script src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/loginChange.js"></script>
+		<script src="js/jquery-3.5.1.js"></script>
+        <script src="js/slick.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+        <script>
+            const options = { //自定義
+                bottom: '32px', // default: '32px'
+                right: '32px', // default: '32px'
+                left: 'unset', // default: 'unset'
+                time: '0.5s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: '#fff',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: false, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+
+            // function addDarkmodeWidget() { //預設
+            //     new Darkmode().showWidget();
+            // }
+            window.addEventListener('load', addDarkmodeWidget);
+        </script>
+        <script>
+            var flag = 0;
+            $(".darkmode-toggle").click(function(){
+                if(flag==0){
+                    $(".header img").css("filter", "invert(100%)");
+                    flag=1;
+                }
+                else{
+                    $(".header img").css("filter", "invert(0%)");
+                    flag=0;
+                }
+            })
+        </script>
+		
+		
 
 		<!-- 切换页面以后的小玩意 -->
 		<script type="text/javascript">
